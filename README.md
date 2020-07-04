@@ -11,7 +11,7 @@ public void Main() {
 # Insert
 ```
 public void Call() {
-    CQL cql = new CQL(CQL_STATEMENT.INSERT, new Table(String), "?","?","?","?","?","?","?","?","?","default"); //Infinite
+    CQL cql = new CQL(CQL_STATEMENT.INSERT, new CQL_TABLE(String), "?","?","?","?","?","?","?","?","?","default"); //Infinite
     cql.FINDABLE(1, "Hello", "World", 2, 3, 4, 5, 6, "7"); //Infinite
     cql.EXECUTE();
     cql.CLOSE_CONNECTION();
@@ -22,7 +22,7 @@ public void Call() {
 ```
 public void Call() {
     CQL_PROPERTY CqlProperty = new CQL_PROPERTY(CQL_PROPERTIES.AUTOCLOSE, CQL_PROPERTIES.AUTOEXECUTE);
-    CQL cql = new CQL(CQL_STATEMENT.INSERT, CqlProperty, new Table(String), "?","?","?","?","?","?","?","?","?","default"); //Infinite
+    CQL cql = new CQL(CQL_STATEMENT.INSERT, CqlProperty, new CQL_TABLE(String), "?","?","?","?","?","?","?","?","?","default"); //Infinite
     cql.FINDABLE(1, "Hello", "World", 2, 3, 4, 5, 6, "7"); //Infinite
 }
 ```
@@ -30,7 +30,7 @@ public void Call() {
 # Update
 ```
 public void Call() {
-    CQL cql = new CQL(CQL_STATEMENT.UPDATE, new Table(String), "Age", "35", new Where(Name), "JohnSmith"); 
+    CQL cql = new CQL(CQL_STATEMENT.UPDATE, new CQL_TABLE(String), "Age", "35", new Where(Name), "JohnSmith"); 
     cql.EXECUTE();
     cql.CLOSE_CONNECTION();
 }
@@ -39,7 +39,7 @@ public void Call() {
 # Select
 ```
 public void Call() {
-    CQL cql = new CQL(CQL_STATEMENT.SELECT, new Table(String), 
+    CQL cql = new CQL(CQL_STATEMENT.SELECT, new CQL_TABLE(String), 
             new CQL_WHERE("Number"), 
             new CQL_WHERE("1"), //where Number = 1
             "Name", "Age", "Birthdate", "BornAt", "LastName",
